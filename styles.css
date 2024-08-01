@@ -121,6 +121,10 @@
     filter: invert(1);
   }
 
+  .intro{
+    padding: .1em;
+  }
+
   h6{
     font-size: .5em;
   }
@@ -181,4 +185,26 @@
     margin: auto;
     z-index: 1;
     pointer-events: none;
+  }
+
+  .moving-gradient {
+    background: radial-gradient(
+      circle at 100%,
+      #fde2a8,
+      #f9ac78 50%,
+      #feefc7 75%,
+      #fdbf8d 75%
+    );
+    font-weight: 600;
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animatedTextGradient 3s linear infinite;
+  }
+  
+  @keyframes animatedTextGradient {
+    to {
+      background-position: 200% center;
+    }
   }
