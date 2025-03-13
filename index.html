@@ -1,134 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>BORREGUITA</title>
+    <title>JESSICA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Capa oscura */
+            z-index: -1;
+        }
+        h1 {
+            font-size: 8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+            margin-bottom: 20px;
+        }
+        .contador {
+            display: flex;
+            gap: 40px;
+            font-size: 5rem;
+            font-weight: bold;
+            color: white;
+        }
+        .contador span {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 130px;
+            position: relative;
+        }
+        .contador span:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -20px;
+            top: 10%;
+            height: 80%;
+            width: 2px;
+            background: white;
+        }
+        .contador span span {
+            font-size: 5rem;
+            font-weight: bold;
+            text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+            margin-top: 5px;
+            display: inline-block;
+            animation: flip 1s ease-in-out;
+        }
+        .contador span span.label {
+            font-size: 1.5rem;
+            font-weight: normal;
+            text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+            margin-top: 5px;
+            animation: none;
+        }
+        @media (max-width: 600px) {
+            .contador {
+                font-size: 3.5rem;
+                gap: 20px;
+            }
+            .contador span span {
+                font-size: 3.5rem;
+            }
+            .contador span span.label {
+                font-size: 1.2rem;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+        }
+       
+    </style>
 </head>
 <body>
-    <section class='wrapper'>
-        <div class='hero'>
-        </div>
-        <div class='content'>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-          <h1 class='h1--scalingSize' data-text='An awesome title'>PAO 🧡</h1>
-          <h6>Con mucho amor, de Juan</h6>
-          <h1></h1>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-        </div>
+    <video autoplay loop muted>
+        <source src="background.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <h1>Nos vemos en:</h1>
+    <br>
+    <div class="contador" id="contador">
+        <span><span id="dias">0</span><span class="label">Días</span></span>
+        <span><span id="horas">0</span><span class="label">Horas</span></span>
+        <span><span id="minutos">0</span><span class="label">Minutos</span></span>
+        <span><span id="segundos">0</span><span class="label">Segundos</span></span>
+    </div>
+    <script>
+        function actualizarContador() {
+            const fechaObjetivo = new Date("January 20, 2026 00:00:00").getTime();
+            const ahora = new Date().getTime();
+            const diferencia = fechaObjetivo - ahora;
 
-        <div class="cntnt">
-            <h2 id="bo">Hola borreguita</h2>
-            <div class="intro">
-                <h4>Hoy es el día internacional de la novia</h4>
-                <h4>Y como tú eres la mejor novia del mundo</h4>
-                <h4>Te hice este sencillo y pequeño detalle</h4>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h2>Nuestros momentos juntos</h2>
-            <h4>Desde nuestras primeras conversaciones, el día que te fui a visitar, hasta el día de hoy, cada momento contigo ha sido increíble</h4>
-            <br>
-            <img src="1.gif" alt="">
-            <br>
-            <br>
-            <br>
-            <br>
-            <h2>Lo que más amo de ti</h2>
-            <h4>Tu sonrisa, tus ojitos hermosos, tu alegría y tu forma de ver el mundo. Eres única y maravillosa</h4>
-            <br>
-            <img src="2.png" alt="">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h2>Planes y sueños</h2>
-            <h4>Espero con ansias el día en que podamos hacer realidad todos nuestros sueños juntos. Me emociona ver todo lo que nos depara el futuro. Juntos podemos lograr cualquier cosa</h4>
-            <br>
-            <img src="3.png" alt="">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h2>Un día para celebrar el amor</h2>
-            <h4>Hoy quiero recordarte lo mucho que te quiero y lo afortunado que me siento de tenerte en mi vida</h4>
-            <h4>Eres mi alegría, mi inspiración, mi todo. Te amo más de lo que las palabras pueden expresar</h4>
-            <br>
-            <br>
-            <h2>Gracias por ser tú</h2>
-            <h4>Gracias por llenar mi vida de amor, risas y felicidad. Eres mi mayor bendición</h4>
-            <img src="4.jpeg" alt="">
-            <br>
-            <h5 class="moving-gradient">"Cuando te das cuenta de que quieres pasar el resto de tu vida con alguien, quieres que el resto de tu vida comience lo antes posible"</h5>
-        </div>
-    </section>
+            if (diferencia < 0) {
+                document.getElementById("contador").innerHTML = "¡Ya llegó el día!";
+                return;
+            }
+
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerText = dias;
+            document.getElementById("horas").innerText = horas;
+            document.getElementById("minutos").innerText = minutos;
+            document.getElementById("segundos").innerText = segundos;
+        }
+
+        setInterval(actualizarContador, 1000);
+        actualizarContador();
+    </script>
 </body>
 </html>
